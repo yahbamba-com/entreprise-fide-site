@@ -1,0 +1,183 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Informations de l'entreprise
+model SiteConfig {
+  id          String @id @default(cuid())
+  companyName String @default("ENTREPRISE FIDE")
+  slogan      String @default("Sécurité • Énergie • Digital • Communication")
+  description String @default("Solutions technologiques, sécuritaires, énergétiques et digitales")
+  
+  // Contact
+  phone       String @default("+225 07 07 14 96 06")
+  email       String @default("entreprisefide@gmail.com")
+  address     String @default("Abidjan, Côte d'Ivoire")
+  website     String?
+  
+  // Réseaux sociaux
+  facebook    String?
+  instagram   String?
+  linkedin    String?
+  youtube     String?
+  
+  // Logo
+  logoUrl     String?
+  
+  updatedAt   DateTime @updatedAt
+  createdAt   DateTime @default(now())
+}
+
+// Slides du hero (carrousel)
+model HeroSlide {
+  id          String @id @default(cuid())
+  title       String?
+  subtitle    String?
+  imageUrl    String
+  altText     String?
+  order       Int    @default(0)
+  isActive    Boolean @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Sections de contenu modifiables
+model ContentSection {
+  id          String @id @default(cuid())
+  key         String @unique // Identifiant unique (ex: "presentation", "why_choose_us")
+  title       String
+  content     String // Contenu textuel (peut contenir du HTML)
+  imageUrl    String?
+  buttonText  String?
+  buttonLink  String?
+  isActive    Boolean @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Services
+model Service {
+  id          String @id @default(cuid())
+  slug        String @unique // ex: "securite", "energie", "digital"
+  title       String
+  shortDesc   String // Description courte pour la carte
+  description String // Description complète pour la page
+  icon        String // Nom de l'icône Lucide
+  color       String // Couleur du gradient
+  imageUrl    String?
+  features    String // Liste des fonctionnalités (JSON)
+  order       Int    @default(0)
+  isActive    Boolean @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Vidéos (YouTube, Vimeo, etc.)
+model Video {
+  id          String @id @default(cuid())
+  title       String
+  description String?
+  videoUrl    String // URL de la vidéo (YouTube, Vimeo)
+  thumbnailUrl String?
+  platform    String @default("youtube") // youtube, vimeo, etc.
+  section     String? // Où afficher (ex: "home", "about")
+  order       Int    @default(0)
+  isActive    Boolean @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Galerie d'images
+model GalleryImage {
+  id          String @id @default(cuid())
+  title       String?
+  description String?
+  imageUrl    String
+  category    String? // ex: "projets", "equipe", "realisations"
+  order       Int    @default(0)
+  isActive    Boolean @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Avantages (Pourquoi nous choisir)
+model Advantage {
+  id          String @id @default(cuid())
+  icon        String
+  text        String
+  order       Int    @default(0)
+  isActive    Boolean @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Méthodologie
+model MethodologyStep {
+  id          String @id @default(cuid())
+  title       String
+  description String
+  icon        String
+  order       Int    @default(0)
+  isActive    Boolean @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Témoignages clients
+model Testimonial {
+  id          String @id @default(cuid())
+  clientName  String
+  company     String?
+  content     String
+  avatarUrl   String?
+  rating      Int    @default(5)
+  order       Int    @default(0)
+  isActive    Boolean @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Utilisateurs admin
+model AdminUser {
+  id        String @id @default(cuid())
+  email     String @unique
+  name      String?
+  password  String
+  role      String @default("admin")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Fichiers uploadés
+model FileUpload {
+  id           String   @id @default(cuid())
+  filename     String   // Nom du fichier sur le serveur
+  originalName String   // Nom original du fichier
+  mimeType     String   // Type MIME (image/jpeg, video/mp4, etc.)
+  size         Int      // Taille en octets
+  path         String   // Chemin relatif dans /public
+  category     String?  // "images", "videos", "documents"
+  createdAt    DateTime @default(now())
+}
+
+// Partenaires
+model Partner {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  logoUrl     String?
+  category    String?
+  website     String?
+  order       Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
