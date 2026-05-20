@@ -146,7 +146,7 @@ const countries = [
   { name: 'Mali', flag: '🇲🇱', code: 'ML' },
   { name: 'Bénin', flag: '🇧🇯', code: 'BJ' },
   { name: 'Togo', flag: '🇹🇬', code: 'TG' },
-]
+];
 
 // Cities in Côte d'Ivoire
 const cities = [
