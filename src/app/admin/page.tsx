@@ -486,7 +486,7 @@ export default function AdminPage() {
             </Link>
             <div className="h-6 w-px bg-white/30" />
             <img 
-              src="/images/logo-fide.jpeg" 
+              src="/logo-fide" 
               alt="ENTREPRISE FIDE" 
               className="h-10 w-auto rounded"
             />

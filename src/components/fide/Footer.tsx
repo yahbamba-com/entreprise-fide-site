@@ -29,7 +29,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <img 
-                src="/images/logo-fide.jpeg" 
+                src="/logo-fide" 
                 alt="ENTREPRISE FIDE" 
                 className="h-12 w-auto rounded-lg"
               />

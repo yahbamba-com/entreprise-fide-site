@@ -71,7 +71,7 @@ export default function Header() {
           <Link href="/" className="flex items-center gap-3">
             {/* Logo Image */}
             <img 
-              src={siteConfig.logoUrl || "/images/logo-fide.jpeg"} 
+              src={siteConfig.logoUrl || "/logo-fide"} 
               alt={siteConfig.companyName} 
               className="h-10 md:h-12 w-auto rounded-lg"
             />
