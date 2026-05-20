@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Button } from "@/components/ui/button"
-import { Menu, X, ChevronDown, Settings } from 'lucide-react'
+import { Menu, X, ChevronDown } from 'lucide-react'
 
 interface SiteConfig {
   companyName: string
@@ -67,22 +67,23 @@ export default function Header() {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            {siteConfig.logoUrl ? (
-              <img src={siteConfig.logoUrl} alt={siteConfig.companyName} className="h-10 md:h-12 w-auto" />
-            ) : (
-              <>
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-[#003366] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg md:text-xl">F</span>
-                </div>
-                <div className="hidden sm:block">
-                  <span className={`font-bold text-lg ${isScrolled || !isHome ? 'text-[#003366]' : 'text-white'}`}>
-                    {siteConfig.companyName?.split(' ')[0]} <span className="text-[#FF0000]">{siteConfig.companyName?.split(' ')[1]}</span>
-                  </span>
-                </div>
-              </>
-            )}
+                    {/* Logo */}
+          <Link href="/" className="flex items-center gap-3">
+            {/* Logo Image */}
+            <img 
+              src={siteConfig.logoUrl || "/images/logo-fide.jpeg"} 
+              alt={siteConfig.companyName} 
+              className="h-10 md:h-12 w-auto rounded-lg"
+            />
+            {/* Company Name */}
+            <div className="hidden sm:block">
+              <span className={`font-bold text-lg ${isScrolled || !isHome ? 'text-[#003366]' : 'text-white'}`}>
+                {siteConfig.companyName.split(' ')[0]} <span className="text-[#FF0000]">{siteConfig.companyName.split(' ')[1]}</span>
+              </span>
+              <p className={`text-xs ${isScrolled || !isHome ? 'text-gray-500' : 'text-white/70'}`}>
+                Leader Ouest-Africain en Ingénierie
+              </p>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -136,12 +137,6 @@ export default function Header() {
                 )}
               </div>
             ))}
-            
-            {/* Admin Link */}
-            <Link href="/admin" className="flex items-center gap-1 text-gray-500 hover:text-[#003366]">
-              <Settings className="w-4 h-4" />
-              <span className="text-sm">Admin</span>
-            </Link>
             
             <Link href="/contact">
               <Button className="bg-[#FF0000] hover:bg-red-700 text-white rounded-full px-6">
@@ -202,10 +197,6 @@ export default function Header() {
                   )}
                 </div>
               ))}
-              <Link href="/admin" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-2 text-gray-500">
-                <Settings className="w-4 h-4" />
-                <span>Administration</span>
-              </Link>
               <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
                 <Button className="bg-[#FF0000] hover:bg-red-700 text-white rounded-full w-full">
                   Demander un devis

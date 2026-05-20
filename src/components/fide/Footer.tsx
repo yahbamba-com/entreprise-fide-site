@@ -25,15 +25,20 @@ export default function Footer() {
     <footer className="bg-[#003366] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Brand */}
+                    {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
-                <span className="text-[#003366] font-bold text-xl">F</span>
+            <div className="flex items-center gap-3 mb-4">
+              <img 
+                src="/images/logo-fide.jpeg" 
+                alt="ENTREPRISE FIDE" 
+                className="h-12 w-auto rounded-lg"
+              />
+              <div>
+                <span className="font-bold text-xl block">
+                  ENTREPRISE <span className="text-[#FF0000]">FIDE</span>
+                </span>
+                <span className="text-white/60 text-xs">Leader Ouest-Africain en Ingénierie</span>
               </div>
-              <span className="font-bold text-xl">
-                ENTREPRISE <span className="text-[#FF0000]">FIDE</span>
-              </span>
             </div>
             <p className="text-white/70 mb-4">
               Excellence technique & Innovation Digitale en Afrique.

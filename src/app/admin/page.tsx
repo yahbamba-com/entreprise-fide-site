@@ -476,7 +476,7 @@ export default function AdminPage() {
   
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
+            {/* Header */}
       <header className="bg-[#003366] text-white py-4 px-6 shadow-lg">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-4">
@@ -485,7 +485,12 @@ export default function AdminPage() {
               Retour au site
             </Link>
             <div className="h-6 w-px bg-white/30" />
-            <h1 className="text-xl font-bold">Panneau d'Administration</h1>
+            <img 
+              src="/images/logo-fide.jpeg" 
+              alt="ENTREPRISE FIDE" 
+              className="h-10 w-auto rounded"
+            />
+            <h1 className="text-xl font-bold hidden sm:block">Administration</h1>
           </div>
           <Badge variant="outline" className="text-white border-white/30">
             CMS FIDE
