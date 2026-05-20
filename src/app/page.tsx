@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import dynamic from 'next/dynamic'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { 
@@ -45,8 +44,8 @@ import {
   Upload
 } from 'lucide-react'
 
-// Dynamic imports for animations
-const motion = dynamic(() => import('framer-motion').then(mod => mod.motion), { ssr: false })
+// Framer Motion
+import { motion } from 'framer-motion'
 
 // Types
 interface SiteConfig {
@@ -251,9 +250,9 @@ interface Partner {
   id: string
   name: string
   description?: string
-  logoUrl?: string
+  logoUrl?: string | null
   category?: string
-  website?: string
+  website?: string | null
   order: number
   isActive: boolean
 }
