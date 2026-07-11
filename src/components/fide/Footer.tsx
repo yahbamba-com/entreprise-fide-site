@@ -29,7 +29,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <img 
-                src="/logo-fide" 
+                src="/logo-fide.jpeg" 
                 alt="ENTREPRISE FIDE" 
                 className="h-12 w-auto rounded-lg"
               />
@@ -131,7 +131,7 @@ export default function Footer() {
         <div className="border-t border-white/10 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/50 text-sm">
-              © {currentYear} ENTREPRISE FIDE | Solutions Techniques Intégrées | All Rights Reserved | by <Link href="https://yb.com" className="hover:text-white transition-colors">yb.com</Link>
+              © {currentYear} ENTREPRISE FIDE | Solutions Techniques Intégrées | All Rights Reserved | by <Link href="https://yahbamba.com" className="hover:text-white transition-colors">yahbamba.com</Link>
             </p>
             <div className="flex gap-6 text-white/50 text-sm">
               <Link href="#" className="hover:text-white transition-colors">

@@ -76,7 +76,7 @@ const divisions = [
     icon: Radio,
     color: 'from-blue-600 to-cyan-500',
     services: ['Réseaux téléphoniques', 'Interphones & visiophones', 'Alarmes sans fil', 'Vidéosurveillance CCTV', 'Radiocommunication', 'VSAT'],
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
+    image: '/services/securite.jpeg',
     features: ['Installation professionnelle', 'Maintenance 24/7', 'Support technique']
   },
   {
@@ -87,7 +87,7 @@ const divisions = [
     icon: Sun,
     color: 'from-orange-500 to-yellow-500',
     services: ['Électricité générale', 'Systèmes solaires', 'Groupes électrogènes', 'Froid industriel', 'Pompage solaire'],
-    image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80',
+    image: '/services/energie.jpeg',
     features: ['Études personnalisées', 'Installation clé en main', 'Garantie étendue']
   },
   {
@@ -98,7 +98,7 @@ const divisions = [
     icon: Cpu,
     color: 'from-purple-600 to-pink-500',
     services: ['Réseaux informatiques', 'Développement web', 'Applications mobiles', 'ERP & CRM', 'Paiements mobiles'],
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80',
+    image: '/services/digital.png',
     features: ['Technologies modernes', 'Solutions sur mesure', 'Support continu']
   },
   {
@@ -120,7 +120,7 @@ const divisions = [
     icon: Wrench,
     color: 'from-slate-600 to-gray-500',
     services: ['Fournitures de bureau', 'Distribution équipements', 'Maintenance', 'Petits travaux', 'Gestion technique'],
-    image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80',
+    image: '/services/general.jpeg',
     features: ['Réactivité', 'Polyvalence', 'Service complet']
   },
   {
@@ -131,7 +131,7 @@ const divisions = [
     icon: Tractor,
     color: 'from-green-600 to-emerald-500',
     services: ['Irrigation solaire', 'Systèmes goutte-à-goutte', 'Pompage agricole', 'Infrastructures rurales'],
-    image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80',
+    image: '/services/agriculture.jpeg',
     features: ['Économie d\'eau', 'Technologie solaire', 'Productivité accrue']
   }
 ]
@@ -220,27 +220,27 @@ const defaultPartners = [
 // Projects
 const projects = [
   {
-    title: 'Système de Vidéosurveillance - Ministère',
+    title: 'Système de Vidéosurveillance',
     category: 'Sécurité',
-    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=600&q=80',
+    image: '/projects/projet-1.jpeg',
     description: 'Installation complète de 150 caméras HD avec centre de contrôle.'
   },
   {
-    title: 'Ferme Solaire 500kW - Korhogo',
+    title: 'Ferme Solaire 500kW - dabakala',
     category: 'Énergie',
     image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&q=80',
     description: 'Centrale photovoltaïque pour une coopérative agricole.'
   },
   {
-    title: 'Plateforme E-Gouvernement',
+    title: 'Plateforme Gouvernementale',
     category: 'Digital',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80',
     description: 'Application web de gestion administrative nationale.'
   },
   {
-    title: 'Irrigation Intelligente - Daloa',
+    title: 'Irrigation Intelligente ',
     category: 'Agriculture',
-    image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&q=80',
+    image: '/projects/projet-7.jpeg',
     description: 'Système d\'irrigation solaire pour 200 hectares de cultures.'
   }
 ]
@@ -273,15 +273,15 @@ export default function HomePage() {
 
   const heroSlides = [
     {
-      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80',
+      image: '/hero/hero-1.jpeg',
       alt: 'Infrastructure moderne en Afrique'
     },
     {
-      image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1920&q=80',
+      image: '/hero/hero-2.jpeg',
       alt: 'Technologie et innovation'
     },
     {
-      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80',
+      image: '/hero/hero-3.png',
       alt: 'Ingénierie digitale'
     }
   ]
@@ -488,7 +488,7 @@ export default function HomePage() {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-10 right-10 z-20 hidden lg:flex flex-col items-center gap-2">
-          <span className="text-white/50 text-xs uppercase tracking-widest rotate-90 origin-center translate-y-8">Scroll</span>
+          <span className="text-white/50 text-xs uppercase tracking-widest rotate-90 origin-center translate-y-8">Fide</span>
           <div className="w-px h-12 bg-gradient-to-b from-transparent via-[#C9A227] to-transparent"></div>
         </div>
       </section>
@@ -505,14 +505,14 @@ export default function HomePage() {
                 <div className="space-y-4">
                   <div className="relative h-48 rounded-2xl overflow-hidden">
                     <img 
-                      src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&q=80" 
+                      src="/propos/propos-1.png" 
                       alt="Technologie" 
                       className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="relative h-64 rounded-2xl overflow-hidden">
                     <img 
-                      src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&q=80" 
+                      src="/propos/propos-3.jpeg" 
                       alt="Énergie solaire" 
                       className="w-full h-full object-cover"
                     />
@@ -521,7 +521,7 @@ export default function HomePage() {
                 <div className="space-y-4 pt-8">
                   <div className="relative h-64 rounded-2xl overflow-hidden">
                     <img 
-                      src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&q=80" 
+                      src="/propos/propos-2.jpeg" 
                       alt="Infrastructure" 
                       className="w-full h-full object-cover"
                     />
@@ -744,7 +744,7 @@ export default function HomePage() {
               <span className="text-[#C9A227] text-sm font-medium">Nos Domaines d&apos;Expertise</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-              6 Divisions. <span className="text-[#C9A227]">Une expertise complète.</span>
+              Divisions. <span className="text-[#C9A227]">Une expertise complète.</span>
             </h2>
             <p className="text-white/60 text-lg max-w-2xl mx-auto">
               Des solutions intégrées couvrant l&apos;ensemble des besoins technologiques et infrastructurels 
