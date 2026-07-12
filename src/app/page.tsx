@@ -69,7 +69,7 @@ const stats = [
 // Business Divisions
 const divisions = [
   {
-    id: 'telecom-security',
+    id: 'securite',
     title: 'Télécommunications & Sécurité Électronique',
     subtitle: 'Solutions de connectivité et protection avancées',
     description: 'Déploiement d\'infrastructures télécom et systèmes de sécurité de nouvelle génération pour entreprises et institutions.',
@@ -80,7 +80,7 @@ const divisions = [
     features: ['Installation professionnelle', 'Maintenance 24/7', 'Support technique']
   },
   {
-    id: 'energy-solar',
+    id: 'energie',
     title: 'Énergie, Électricité & Solaire',
     subtitle: 'Solutions énergétiques durables et fiables',
     description: 'Conception et installation de systèmes électriques et solaires pour une autonomie énergétique optimale.',
@@ -91,7 +91,7 @@ const divisions = [
     features: ['Études personnalisées', 'Installation clé en main', 'Garantie étendue']
   },
   {
-    id: 'it-digital',
+    id: 'digital',
     title: 'IT & Ingénierie Digitale',
     subtitle: 'Transformation numérique et innovation technologique',
     description: 'Développement de solutions numériques sur mesure et infrastructures IT pour l\'entreprise moderne.',
@@ -102,7 +102,7 @@ const divisions = [
     features: ['Technologies modernes', 'Solutions sur mesure', 'Support continu']
   },
   {
-    id: 'branding-printing',
+    id: 'communication',
     title: 'Branding, Communication & Impression',
     subtitle: 'Identité visuelle et supports de communication',
     description: 'Création d\'identités visuelles impactantes et production de supports publicitaires de haute qualité.',
@@ -113,7 +113,7 @@ const divisions = [
     features: ['Design créatif', 'Production rapide', 'Qualité premium']
   },
   {
-    id: 'general-services',
+    id: 'generaux',
     title: 'Services Généraux',
     subtitle: 'Support opérationnel et logistique',
     description: 'Fourniture d\'équipements, maintenance et gestion d\'infrastructures pour un environnement de travail optimal.',
@@ -124,7 +124,7 @@ const divisions = [
     features: ['Réactivité', 'Polyvalence', 'Service complet']
   },
   {
-    id: 'smart-agriculture',
+    id: 'services',
     title: 'Agriculture Intelligente & Hydraulique',
     subtitle: 'Solutions agricoles technologiques et durables',
     description: 'Systèmes d\'irrigation intelligents et solutions hydrauliques pour une agriculture moderne et productive.',
@@ -159,7 +159,7 @@ const defaultPartners = [
     id: 'default-1',
     name: 'Africa Sourcing',
     description: 'Entreprise spécialisée dans l\'achat et l\'exportation de fèves de cacao et de café.',
-    logoUrl: null,
+    logoUrl: '/partners/partner-1.jpeg',
     category: 'Agro-export',
     website: null,
     order: 0,
@@ -169,7 +169,7 @@ const defaultPartners = [
     id: 'default-2',
     name: 'Ivory Cashew Nuts',
     description: 'Acteur de la filière de transformation et d\'exportation de la noix de cajou.',
-    logoUrl: null,
+    logoUrl: '/partners/partner-2.jpeg',
     category: 'Agro-industrie',
     website: null,
     order: 1,
@@ -179,7 +179,7 @@ const defaultPartners = [
     id: 'default-3',
     name: 'CI-Cajou',
     description: 'Conseil du Coton et de l\'Anacarde - Organe de régulation des filières coton et anacarde en Côte d\'Ivoire.',
-    logoUrl: null,
+    logoUrl: '/partners/partner-3.jpeg',
     category: 'Institution',
     website: null,
     order: 2,
@@ -189,7 +189,7 @@ const defaultPartners = [
     id: 'default-4',
     name: 'NCI',
     description: 'Nouvelle Chaîne Ivoirienne - Chaîne de télévision privée généraliste ivoirienne.',
-    logoUrl: null,
+    logoUrl: '/partners/partner-4.jpeg',
     category: 'Média',
     website: null,
     order: 3,
@@ -199,7 +199,7 @@ const defaultPartners = [
     id: 'default-5',
     name: 'Radio Nostalgie',
     description: 'Station de radio leader en Côte d\'Ivoire.',
-    logoUrl: null,
+    logoUrl: '/partners/partner-5.png',
     category: 'Média',
     website: null,
     order: 4,
@@ -209,7 +209,7 @@ const defaultPartners = [
     id: 'default-6',
     name: 'OIC',
     description: 'Office Ivoirien des Chargeurs - Institution d\'assistance aux chargeurs et de facilitation des transports.',
-    logoUrl: null,
+    logoUrl: '/partners/partner-6.png',
     category: 'Institution',
     website: null,
     order: 5,
@@ -911,12 +911,13 @@ export default function HomePage() {
                   className="flex-shrink-0 w-80 bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-gray-100"
                 >
                   {/* Logo */}
-                  <div className="h-20 bg-gradient-to-br from-gray-100 to-gray-50 rounded-xl flex items-center justify-center mb-4 overflow-hidden">
+                  <div className="h-28 bg-gray-50 rounded-xl flex items-center justify-center mb-4 overflow-hidden p-4 border border-gray-200">
                     {partner.logoUrl ? (
                       <img 
                         src={partner.logoUrl} 
-                        alt={`Logo ${partner.name}`} 
-                        className="max-h-full max-w-full object-contain"
+                        alt={`Logo ${partner.name}`}
+                        loading="lazy"
+                        className="h-16 w-auto object-contain"
                       />
                     ) : (
                       <span className="text-2xl font-bold text-[#0A1628]">{partner.name.charAt(0)}</span>
