@@ -222,7 +222,7 @@ const projects = [
   {
     title: 'Système de Vidéosurveillance',
     category: 'Sécurité',
-    image: '/projects/projet-1.jpeg',
+    image: '/projects/projet-1.png',
     description: 'Installation complète de 150 caméras HD avec centre de contrôle.'
   },
   {
